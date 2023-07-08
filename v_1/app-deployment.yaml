@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appdeployment
+  labels:
+    app.kubernetes.io/name: appdeployment
+spec:
+  selector:
+    matchLabels:
+      app: employees
+      version: v1
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: employees
+        version: v1
+    spec:
+      containers:
+      - name: webapp
+        image: 260735819899.dkr.ecr.us-east-1.amazonaws.com/webapp:v0.1
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports: 
+        - containerPort: 8080
+        env: 
+         - name: DBHOST
+           value: databaseservice.sqldb.svc.cluster.local
+         - name: DBUSER
+           value: root
+         - name: DBPORT
+           value: "3306"
+         - name: APP_COLOR
+           value: blue
+         - name: DBPWD
+           value: nikh1234
