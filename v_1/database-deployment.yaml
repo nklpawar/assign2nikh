@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app.kubernetes.io/name: mysql
+    app.kubernetes.io/component: backend
+spec:
+  selector:
+    matchLabels:
+      name: mysqldb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mysql
+        app.kubernetes.io/component: backend
+    spec:
+      containers:
+      - name: mysql
+        image: 260735819899.dkr.ecr.us-east-1.amazonaws.com/appdatabase:v0.1
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 3306
