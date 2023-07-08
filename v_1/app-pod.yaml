@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: appnikh
+  labels: 
+    name: appnikh
+spec:
+  containers:
+  - name: appnikh
+    image: 260735819899.dkr.ecr.us-east-1.amazonaws.com/webapp:v0.1
+    ports: 
+    - containerPort: 8080
+    env: 
+     - name: DBHOST
+       value: dbservice.sqldb.svc.cluster.local
+     - name: DBUSER
+       value: root
+     - name: DBPORT
+       value: 3306
+     - name: APP_COLOR
+       value: blue
+     - name: DBPWD
+       value: nikh1234
