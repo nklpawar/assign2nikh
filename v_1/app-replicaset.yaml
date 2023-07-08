@@ -26,5 +26,7 @@ spec:
               value: root
             - name: DBPORT
               value: "3306"
+            - name: APP_COLOR
+              value: blue
             - name: DBPWD
               value: nikh1234
