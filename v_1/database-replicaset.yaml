@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: db-replicas
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: mysqldb
+  template:
+    metadata:
+      labels:
+       name: mysqldb
+    spec:
+      containers:
+        - name: mysqldb
+          image: 260735819899.dkr.ecr.us-east-1.amazonaws.com/appdatabase:v0.1
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: nikh1234
