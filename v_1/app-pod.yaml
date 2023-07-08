@@ -12,7 +12,7 @@ spec:
     - containerPort: 8080
     env: 
      - name: DBHOST
-       value: dbservice.sqldb.svc.cluster.local
+       value: databaseservice.sqldb.svc.cluster.local
      - name: DBUSER
        value: root
      - name: DBPORT
