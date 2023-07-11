@@ -3,7 +3,8 @@ kind: Service
 metadata:
   name: applicationservicev2
   labels:
-    name: appnikhv2
+    app: employees
+    version: v2
 spec:
   type: NodePort
   ports:
@@ -11,4 +12,5 @@ spec:
     targetPort: 8080
     nodePort: 30000
   selector:
-    name: appnikhv2
+    app: employees
+    version: v2
