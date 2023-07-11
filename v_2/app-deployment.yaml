@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: appdeploymentv2
   labels:
-    app.kubernetes.io/name: appdeploymentv2
+    app.kubernetes.io/name: appdeployment
 spec:
   selector:
     matchLabels:
@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: employeesv2
+        app: employees
         version: v2
     spec:
       containers:
