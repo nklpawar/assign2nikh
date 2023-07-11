@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: applicationservicev2
   labels:
-    name: appnikh
+    name: appnikhv2
 spec:
   type: NodePort
   ports:
