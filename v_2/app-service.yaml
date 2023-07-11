@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v2
 kind: Service
 metadata:
   name: applicationservicev2
@@ -11,4 +11,4 @@ spec:
     targetPort: 8080
     nodePort: 30000
   selector:
-    name: appnikh
+    name: appnikhv2
